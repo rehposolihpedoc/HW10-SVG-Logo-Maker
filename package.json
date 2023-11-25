@@ -1,0 +1,16 @@
+{
+  "name": "10-svg-logo-maker",
+  "version": "1.0.0",
+  "description": "Generate Logos with prompts ## Description A logo generator simplifies a very design intesive process of logo generation. Questions prompt the shape and color of the logo being generated. The final rendering will be the creation on an SVG file that can be rendered in real time.  ## Table of Contents (Optional) If your README is long, add a table of contents to make it easy for users to find what they need. - [Installation](#installation) - [Usage](#usage) - [Credits](#credits) - [License](#license)",
+  "main": "Index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^29.7.0"
+  }
+}
