@@ -14,7 +14,7 @@
 // THEN I am shown a 300x200 pixel image that matches the criteria I entered
 
 const inquirer = require('inquirer');
-const {Triange, Square}
+const {Square,Triangle,Circle} = require("./Lib/shapes")
 const questions = [{
  type: 'input',
  name: 'text',
@@ -50,10 +50,20 @@ const questions = [{
 //ask the questions
 //with those answers, decide which Shape to make (answers.shapeColor)
 
+// function writeToFile(fileName, answers) {
+//     const content = generateLogo(answers);
+//     fs.writeFile(fileName, content, function(error) {
+//      if (error)
+//      return console.log(error);
+//     }
+//     console.log('generated logo.svg')
+//     )
+// } 
 
-const template = `<svg>
 
-${//shape.render()}
-</svg>`
 
-fs write file 
+
+
+// const template = `<svg>${//shape.render()}</svg>`
+
+// fs write file 
