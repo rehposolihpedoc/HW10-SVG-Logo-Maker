@@ -1,8 +1,9 @@
 # HW10-SVG-Logo-Maker
-Generate Logos with prompts
+
 ## Description
 A logo generator simplifies a very design intesive process of logo generation. Questions prompt the shape and color of the logo being generated. The final rendering will be the creation on an SVG file that can be rendered in real time. 
-## Table of Contents (Optional)
+
+## Table of Contents
 If your README is long, add a table of contents to make it easy for users to find what they need.
 - [Installation](#installation)
 - [Usage](#usage)
@@ -10,12 +11,18 @@ If your README is long, add a table of contents to make it easy for users to fin
 - [License](#license)
 
 ## Installation
-
+* Step 1- Clone this repo @ https://github.com/rehposolihpedoc/HW10-SVG-Logo-Maker
+* Step 2- VS Code IDE.
+* Step 3- Download Node.js. 
+* Step 4- Download Inquirer. 
 
 ## Usage
 
 ![Screenshot for shapes.js file](./Images/Screenshot%202023-11-25%20at%202.21.47 PM.png)
 
+Sample image of fully generated logo
+![Screenshot of rendered SVG logo](./Images/Screenshot%202023-11-27%20at%2011.48.29 AM.png)
+![Screenshot of rendered SVG logo](./Images/Screenshot%202023-11-27%20at%2011.55.04 AM.png)
 
 ## Credits
 Thanks to-
@@ -24,13 +31,17 @@ https://github.com/rmessett15/SVG-Logo-Maker/tree/main
 
 
 ## License
-[MIT License](./LICENSE).
+[MIT License](./LICENSE)
 ---
 
 ## Features
-If your project has a lot of features, list them here.
+Backend only .svg generator that does not use HTML or CSS.
+
+## Demo Link
+
 
 ## How to Contribute
-If you created an application or package and would like other developers to contribute to it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+This project is open to collaboration, if you choose to do so open an issue and modify any changes you would like to see on a feature branch and wait for approval before merging to the main branch.
+
 ## Tests
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+* Jest

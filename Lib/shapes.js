@@ -23,7 +23,7 @@ class Circle extends Shape {
          super(color);
     }
     render(){
-     return `<circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="${this.color}" />`
+     return `<circle cx="150" cy="100" r="80" stroke="black" stroke-width="3" fill="${this.color}" />`
     }
  }
 class Square extends Shape {
@@ -35,17 +35,18 @@ class Square extends Shape {
     }
  }
 const baseShape = new Shape ("blue");
-console.log(baseShape);
 baseShape.setColor("red"); 
-console.log(baseShape);
 
 const myTriangle = new Triangle ("yellow");
-console.log(myTriangle);
+myTriangle.setColor("blue");
+
 
 const mySquare = new Square ("purple");
-console.log(mySquare);
+mySquare.setColor("purple");
+
 
 const myCircle = new Circle ("red");
-console.log(myCircle);
+myCircle.setColor("purple");
 
-module.exports = {Square,Triangle,Circle}
+
+module.exports = {Shape, Square,Triangle,Circle}

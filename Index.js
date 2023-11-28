@@ -14,17 +14,20 @@
 // THEN I am shown a 300x200 pixel image that matches the criteria I entered
 
 const inquirer = require('inquirer');
-const {Square,Triangle,Circle} = require("./Lib/shapes")
-const questions = [{
+const fs = require('fs')
+const {Shape, Square, Triangle, Circle} = require("./Lib/shapes");
+function questions() {
+    inquirer
+ .prompt( [{
  type: 'input',
  name: 'text',
- message: 'Enter text',
+ message: 'Enter 3 charachters to display on your logo (No more than 3)',
 
 },
 {
     type: 'input',
     name: 'textColor',
-    message: 'What is your text color?',
+    message: 'What is your text color? (Enter a color keyword or a hexadecimal number)',
    
    },
    {
@@ -41,25 +44,56 @@ const questions = [{
    {
     type: 'input',
     name: 'shapeColor',
-    message: 'Enter your shape color',
+    message: 'Enter your shape color (Enter a color keyword or a hexadecimal number)',
    
    },
 
-]
-
+])
+.then((answers) => {
+    if (answers.text.length > 3) {
+        console.log("3 Character Maximum Input For First Question! Try again.");
+        questions();
+    } else if (answers.text.length < 4) {
+      writeToFile("NewLogo.svg", answers);
+    }
+});
+}
 //ask the questions
 //with those answers, decide which Shape to make (answers.shapeColor)
 
-// function writeToFile(fileName, answers) {
-//     const content = generateLogo(answers);
-//     fs.writeFile(fileName, content, function(error) {
-//      if (error)
-//      return console.log(error);
-//     }
-//     console.log('generated logo.svg')
-//     )
-// } 
+function writeToFile(fileName, answers) {
+let svgUrl = "";
+svgUrl = '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
+svgUrl += "<g>" ;
+svgUrl += `${answers.shape}`;
 
+
+
+
+let chooseShape;
+if (answers.shape === "circle") {
+    chooseShape = new Circle(answers.shapeColor);
+}
+if (answers.shape === "triangle") {
+    chooseShape = new Triangle(answers.shapeColor);
+} 
+if (answers.shape === "square") {
+    chooseShape = new Square(answers.shapeColor);
+}
+svgUrl += chooseShape.render()
+svgUrl += `<text x="150" y="125" text-anchor="middle" font-size="60" fill="${answers.textColor}">${answers.text}</text>`
+svgUrl += "</g>";
+svgUrl += "</svg>";
+
+fs.writeFile(fileName, svgUrl, function(error) {
+    if (error)
+    return console.log(error) ; 
+   console.log('generated logo.svg');} )
+}
+
+
+
+questions()
 
 
 
